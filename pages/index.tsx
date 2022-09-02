@@ -5,7 +5,7 @@ import Banner from '../components/Banner'
 import Header from '../components/Header'
 import SmallCard from '../components/SmallCard'
 
-const Home: NextPage = ({ exploreData }) => {
+const Home: NextPage = (exploreData) => {
 
   return (
     <div className="">
@@ -25,7 +25,8 @@ const Home: NextPage = ({ exploreData }) => {
         <h2 className='text-4xl font-semibold pd-5'>Explore Nearby</h2>
 
         {/* Pull some data from a server - API endpoints */}
-        {exploreData?.map((img: Key | null | undefined, distance: any, location: any) => (
+
+        {exploreData?.map(({img, distance, location}) => (
           <SmallCard 
           key={img}
           img={img}
@@ -48,7 +49,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        exploreData
+        exploreData: exploreData
       }
     }
 }
