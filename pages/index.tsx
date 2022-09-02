@@ -26,7 +26,7 @@ const Home: NextPage = (exploreData) => {
 
         {/* Pull some data from a server - API endpoints */}
 
-        {exploreData?.map(({img, distance, location}) => (
+        {exploreData['exploreData']?.map(({img, distance, location}) => (
           <SmallCard 
           key={img}
           img={img}
