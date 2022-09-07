@@ -42,7 +42,7 @@ const Home: NextPage = (exploreData, cardsData) => {
       <section>
         <h2 className='text-4xl font-semibold py-8'>Live Anywhere</h2>
 
-        <div>
+        <div className='flex space-x-3 overflow-scroll'>
         {cardsData['cardsData']?.map(({img, title}) => (
           <MediumCard 
           key={img}
